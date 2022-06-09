@@ -180,9 +180,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -193,6 +193,7 @@ textarea {
    ========================================================================== */
 
 @media print {
+
   *,
   *::before,
   *::after {
@@ -261,3 +262,34 @@ textarea {
   }
 }
 
+body {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+.container::before {
+  content: "";
+  display: block;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  filter: blur(4px);
+  background-color: black;
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 100%),
+    url("/assets/img/cover.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.items {
+  border: 1px solid black;
+}
